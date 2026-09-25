@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.quiz.sp4nd4n",
+        "sha256_cert_fingerprints": ["E0:2F:47:DF:78:50:5E:BE:BD:05:83:F1:61:7D:CF:24:C5:0D:F5:C1:C3:F3:A8:C3:BD:62:46:1E:80:44:30:67"]
+      }
+    }]
