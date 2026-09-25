@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz</title>
+<meta name="theme-color" content="#14101C">
+<link rel="stylesheet" href="quiz-style.css">
+</head>
+<body>
+<div class="motif" id="motif"></div>
+<div class="wrap">
+
+  <!-- LOADING -->
+  <section class="view active" id="view-loading">
+    <div class="spinner"></div>
+  </section>
+
+  <!-- ERROR -->
+  <section class="view" id="view-error">
+    <h2>This link doesn't lead anywhere</h2>
+    <p>The quiz may have been removed, or the link's incomplete. Double-check it with whoever sent it.</p>
+  </section>
+
+  <!-- INTRO -->
+  <section class="view" id="view-intro">
+    <span class="genre-tag" id="intro-genre">Genre</span>
+    <h1 class="intro-title" id="intro-title">Ready for a quick quiz?</h1>
+    <p class="intro-sub" id="intro-sub">A few questions, takes under a minute.</p>
+    <button class="btn-primary" id="btn-start">Let's go</button>
+  </section>
+
+  <!-- IDENTIFY -->
+  <section class="view" id="view-identify">
+    <p class="id-eyebrow" id="id-genre-tag">Before you start</p>
+    <h2 class="id-title">Enter your name &amp; number so we know who to congratulate at the end 😏</h2>
+    <div class="field">
+      <label for="in-name">Your name</label>
+      <input type="text" id="in-name" placeholder="e.g. Priya Sharma" autocomplete="name">
+      <div class="field-err" id="err-name">Enter your name</div>
+    </div>
+    <div class="field">
+      <label for="in-phone">Your phone number</label>
+      <input type="tel" id="in-phone" placeholder="e.g. 98765 43210" autocomplete="tel">
+      <div class="field-err" id="err-phone">Enter a valid phone number</div>
+    </div>
+    <button class="btn-primary" id="btn-identify-continue" style="margin-top:8px">Start quiz</button>
+  </section>
+
+  <!-- QUESTION -->
+  <section class="view" id="view-question">
+    <div class="progress-row" id="progress-row"></div>
+    <p class="q-count" id="q-count">Question 1 of 4</p>
+    <h2 class="q-text" id="q-text">—</h2>
+    <div class="opt-list" id="opt-list"></div>
+    <div class="q-nav">
+      <button class="btn-primary" id="btn-next" disabled>Next</button>
+    </div>
+  </section>
+
+  <!-- SENDING -->
+  <section class="view" id="view-sending">
+    <div class="spinner"></div>
+    <p>Locking in your answers…</p>
+  </section>
+
+  <!-- END -->
+  <section class="view" id="view-end">
+    <div class="end-badge">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h2 class="end-title" id="end-title">All done!</h2>
+    <p class="end-sub" id="end-sub">Thanks for playing.</p>
+  </section>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="quiz.js"></script>
+</body>
+</html>
